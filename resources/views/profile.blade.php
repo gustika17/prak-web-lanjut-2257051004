@@ -58,9 +58,10 @@
         <img src="{{ asset('asset/img/images.jpeg') }}" class="pp" alt="Profile Photo">
 
         <div class="card-body">
-            <h5 class="card-title">{{ $nama ?? 'Gustika Dwi Mardini' }}</h5>
-            <h5 class="card-title">{{ $kelas ?? '2257051004' }}</h5>
-            <h5 class="card-title">{{ $npm ?? 'Kelas tidak ditemukan' }}</h5>
+                <h5 class="card-title d-flex justify-content-center mt-2">{{ $nama }}</h5>
+                <h5 class="card-title d-flex justify-content-center mt-3">{{ $nama_kelas ?? 'Kelas tidak ditemukan' }}</h5>
+                <h5 class="card-title d-flex justify-content-center mt-3">{{ $npm }}</h5>
+            </div>
         </div>
     </div>
 </body>
