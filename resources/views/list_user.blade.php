@@ -12,6 +12,7 @@
                 <th>Nama</th>
                 <th>NPM</th>
                 <th>Kelas</th>
+                <th>Foto</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -22,10 +23,30 @@
                 <td>{{ $user->nama }}</td>
                 <td>{{ $user->npm }}</td>
                 <td>{{ $user->nama_kelas }}</td>
-                <td><a href="{{ route('users.show', $user->id) }}" class = "btn btn-warning mb-3">Detail</a></td>
+                <td><img src="{{ asset('upload/img/' . $user->foto) }}" class="user-photo" alt="User  Photo"></td>
+                <td>
+                    <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary mb-3">Detail</a>
+                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{{ route('user.destroy', $user->id) }}" method="POST" style="display:inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="bg-red-400 p-1 text-md-center font-semibold mx-1 rounded-lg" 
+                        onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
+</div>
+
+<style>
+    .user-photo {
+        width: 50px; /* Atur lebar gambar */
+        height: 50px; /* Atur tinggi gambar */
+        object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+        border-radius: 50%; /* Jika ingin gambar berbentuk bulat */
+    }
+</style>
 @endsection
