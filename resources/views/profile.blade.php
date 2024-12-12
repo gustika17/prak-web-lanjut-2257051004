@@ -55,7 +55,7 @@
 </head>
 <body>
     <div class="card">
-        <img src="{{ asset('asset/images.jpeg') }}" class="pp" alt="Profile Photo">
+        <img src="{{ asset('asset/img/images.jpeg') }}" class="pp" alt="Profile Photo">
 
         <div class="card-body">
             <h5 class="card-title">{{ $nama ?? 'Gustika Dwi Mardini' }}</h5>
