@@ -51,16 +51,28 @@
             font-size: 1rem;
             color: #7F8C8D;
         }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <img src="{{ asset('asset/img/images.jpeg') }}" class="pp" alt="Profile Photo">
-
+        <img class="profile-picture" src="{{ asset('upload/img/' . $user->foto) }}" alt="foto-profile">
         <div class="card-body">
-                <h5 class="card-title d-flex justify-content-center mt-2">{{ $nama }}</h5>
-                <h5 class="card-title d-flex justify-content-center mt-3">{{ $nama_kelas ?? 'Kelas tidak ditemukan' }}</h5>
-                <h5 class="card-title d-flex justify-content-center mt-3">{{ $npm }}</h5>
+            <div class="card-title">
+                <strong>Nama:</strong> <?= $user->nama?>
+            </div>
+            <div class="card-title">
+                <strong>Kelas:</strong> <?= $user->nama_kelas ?? 'Kelas tidak ditemukan' ?>
+            </div>
+            <div class="card-title">
+                <strong>NPM:</strong> <?= $user->npm ?>
             </div>
         </div>
     </div>
