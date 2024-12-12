@@ -28,6 +28,7 @@
             width: 100%;
             height: 15rem;
             object-fit: cover;
+            border-radius: 15px 15px 0 0;
         }
 
         .card-body {
@@ -51,29 +52,22 @@
             font-size: 1rem;
             color: #7F8C8D;
         }
-
-        .profile-picture {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="card">
-        <img class="profile-picture" src="{{ asset('upload/img/' . $user->foto) }}" alt="foto-profile">
+        <img src="{{ asset('upload/img/' . $user->foto) }}" alt="foto-profile" class="pp">
         <div class="card-body">
-            <div class="card-title">
+            <div class="info">
                 <strong>Nama:</strong> <?= $user->nama?>
             </div>
-            <div class="card-title">
+            <div class="info">
                 <strong>Kelas:</strong> <?= $user->nama_kelas ?? 'Kelas tidak ditemukan' ?>
             </div>
-            <div class="card-title">
+            <div class="info">
                 <strong>NPM:</strong> <?= $user->npm ?>
             </div>
+            <button class="bg-red-300 flex w-1/3 font-semibold text-gray-700 text-center rounded-lg"><a href="/user" class="w-full">< Back</a></button>
         </div>
     </div>
 </body>
